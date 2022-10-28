@@ -1,6 +1,33 @@
+from calendar import c
 from random import randint
 
 from graphic_arts.start_game_banner import run_screensaver
+
+
+class Character:
+    def __init__(self, name):
+        self.name = name
+
+    def attack(self):
+        pass
+
+    def defencr(self):
+        pass
+
+    def special(self):
+        pass
+
+
+class Warrior(Character):
+    pass
+
+
+class Mage(Character):
+    pass
+
+
+class Healer(Character):
+    pass
 
 
 def attack(char_name: str, char_class: str) -> str:
