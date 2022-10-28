@@ -26,7 +26,9 @@ class Character:
         return (f'{self.name} блокировал {value_defence} ед. урона.'
 
     def special(self):
-        pass
+        # Здесь описано тело метода special().
+        return (f'{self.name} применил специальное умение '
+                f'"{self.SPECIAL_SKILL} {self.SPECIAL_BUFF}".')
 
 
 class Warrior(Character):
