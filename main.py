@@ -62,6 +62,10 @@ class Healer(Character):
     SPECIAL_SKILL='Защита'
 
 
+warrior=Warrior('Кодослав')
+print(warrior)
+print(warrior.attack())
+
 def attack(char_name: str, char_class: str) -> str:
     if char_class == 'warrior':
         return (f'{char_name} нанёс противнику урон, равный '
