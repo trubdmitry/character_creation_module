@@ -8,6 +8,7 @@ DEFAULT_DEFENCE = 10
 
 
 class Character:
+    BREIF_DESC_CHAR_CLASS = 'отважный любитель приключение'
     RANGE_VALUE_ATTACK = (1, 3)
     RANGE_VALUE_DEFENCE = (1, 5)
     SPECIAL_BUFF = 15
