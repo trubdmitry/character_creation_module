@@ -5,12 +5,16 @@ from graphic_arts.start_game_banner import run_screensaver
 
 
 class Character:
+    RANGE_VALUE_ATTACK = (1, 3)
+
     def __init__(self, name):
         self.name = name
 
     def attack(self):
-        return (f'{self.name} нанёс противнику урон, равный '
-                f'5 + randint{5, 10}')
+        # Вместо диапазона записана переменная класса.
+        # Оператор * распаковывает передаваемый кортеж.
+        value_attack = 5 + randint(self.RANGE_VALUE_ATTACK)
+        return (f'{self.name} нанёс противнику урон, равный {value_attack}')
 
     def defencr(self):
         pass
