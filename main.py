@@ -9,7 +9,8 @@ class Character:
         self.name = name
 
     def attack(self):
-        pass
+        return (f'{self.name} нанёс противнику урон, равный '
+                f'5 + randint{5, 10}')
 
     def defencr(self):
         pass
