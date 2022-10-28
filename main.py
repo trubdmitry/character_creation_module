@@ -10,6 +10,8 @@ DEFAULT_DEFENCE = 10
 class Character:
     RANGE_VALUE_ATTACK = (1, 3)
     RANGE_VALUE_DEFENCE = (1, 5)
+    SPECIAL_BUFF = 15
+    SPECIAL_SKILL = 'Удача'
 
     def __init__(self, name):
         self.name = name
