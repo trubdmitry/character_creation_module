@@ -3,6 +3,8 @@ from random import randint
 
 from graphic_arts.start_game_banner import run_screensaver
 
+DEFAULT_ATTCK = 5
+
 
 class Character:
     RANGE_VALUE_ATTACK = (1, 3)
@@ -13,7 +15,7 @@ class Character:
     def attack(self):
         # Вместо диапазона записана переменная класса.
         # Оператор * распаковывает передаваемый кортеж.
-        value_attack = 5 + randint(self.RANGE_VALUE_ATTACK)
+        value_attack = DEFAULT_ATTCK + randint(self.RANGE_VALUE_ATTACK)
         return (f'{self.name} нанёс противнику урон, равный {value_attack}')
 
     def defencr(self):
