@@ -5,6 +5,7 @@ from graphic_arts.start_game_banner import run_screensaver
 
 DEFAULT_ATTCK = 5
 DEFAULT_DEFENCE = 10
+DEFAULT_STAMINA = 80
 
 
 class Character:
@@ -26,7 +27,7 @@ class Character:
     def defencr(self):
         # Вычисляем значение защиты в переменной value_defence.
         value_defence = DEFAULT_DEFENCE + randint(*self.RANGE_VALUE_DEFENCE)
-        return (f'{self.name} блокировал {value_defence} ед. урона.'
+        return (f'{self.name} блокировал {value_defence} ед. урона.')
 
     def special(self):
         # Здесь описано тело метода special().
@@ -38,33 +39,36 @@ class Character:
 
 
 class Warrior(Character):
-    BREIF_DESC_CHAR_CLASS=(' дерзкий воин ближнего боя. '
+    BREIF_DESC_CHAR_CLASS = (' дерзкий воин ближнего боя. '
                              'Сильный, выносливый и отважный')
-    RANGE_VALUE_ATTACK=(3, 5)
-    RANGE_VALUE_DEFENCE=(5, 10)
-    SPECIAL_BUFF=DEFAULT_STAMINA + 25
-    SPECIAL_SKILL='Выносливость'
+    RANGE_VALUE_ATTACK = (3, 5)
+    RANGE_VALUE_DEFENCE = (5, 10)
+    SPECIAL_BUFF = DEFAULT_STAMINA + 25
+    SPECIAL_SKILL = 'Выносливость'
+
 
 class Mage(Character):
-    BREIF_DESC_CHAR_CLASS=(' находчивый воин дальнего боя. '
+    BREIF_DESC_CHAR_CLASS = (' находчивый воин дальнего боя. '
                              'Обладает высоким интеллектом')
-    RANGE_VALUE_ATTACK=(5, 10)
-    RANGE_VALUE_DEFENCE=(-2, 2)
-    SPECIAL_BUFF=DEFAULT_ATTACK + 40
-    SPECIAL_SKILL='Атака'
+    RANGE_VALUE_ATTACK = (5, 10)
+    RANGE_VALUE_DEFENCE = (-2, 2)
+    SPECIAL_BUFF = DEFAULT_ATTACK + 40
+    SPECIAL_SKILL = 'Атака'
+
 
 class Healer(Character):
-    BREIF_DESC_CHAR_CLASS=(' могущественный заклинатель. '
+    BREIF_DESC_CHAR_CLASS = (' могущественный заклинатель. '
                              'Черпает силы из природы, веры и духов')
-    RANGE_VALUE_ATTACK=(-3, -1)
-    RANGE_VALUE_DEFENCE=(2, 5)
-    SPECIAL_BUFF=DEFAULT_DEFENCE + 30
-    SPECIAL_SKILL='Защита'
+    RANGE_VALUE_ATTACK = (-3, -1)
+    RANGE_VALUE_DEFENCE = (2, 5)
+    SPECIAL_BUFF = DEFAULT_DEFENCE + 30
+    SPECIAL_SKILL = 'Защита'
 
 
-warrior=Warrior('Кодослав')
+warrior = Warrior('Кодослав')
 print(warrior)
 print(warrior.attack())
+
 
 def attack(char_name: str, char_class: str) -> str:
     if char_class == 'warrior':
@@ -109,9 +113,9 @@ def start_training(char_name: str, char_class: str) -> str:
           'defence — чтобы блокировать атаку противника или '
           'special — чтобы использовать свою суперсилу.')
     print('Если не хочешь тренироваться, введи команду skip.')
-    cmd: str=None
+    cmd: str = None
     while cmd != 'skip':
-        cmd=input('Введи команду: ')
+        cmd = input('Введи команду: ')
         if cmd == 'attack':
             print(attack(char_name, char_class))
         if cmd == 'defence':
@@ -122,10 +126,10 @@ def start_training(char_name: str, char_class: str) -> str:
 
 
 def choice_char_class() -> str:
-    approve_choice: str=None
-    char_class: str=None
+    approve_choice: str = None
+    char_class: str = None
     while approve_choice != 'y':
-        char_class=input('Введи название персонажа, '
+        char_class = input('Введи название персонажа, '
                            'за которого хочешь играть: Воитель — warrior, '
                            'Маг — mage, Лекарь — healer: ')
         if char_class == 'warrior':
@@ -137,7 +141,7 @@ def choice_char_class() -> str:
         if char_class == 'healer':
             print('Лекарь — могущественный заклинатель. '
                   'Черпает силы из природы, веры и духов.')
-        approve_choice=input('Нажми (Y), чтобы подтвердить выбор, '
+        approve_choice = input('Нажми (Y), чтобы подтвердить выбор, '
                                'или любую другую кнопку, '
                                'чтобы выбрать другого персонажа ').lower()
     return char_class
@@ -146,12 +150,12 @@ def choice_char_class() -> str:
 def main() -> str:
     print('Приветствую тебя, искатель приключений!')
     print('Прежде чем начать игру...')
-    char_name: str=input('...назови себя: ')
+    char_name: str = input('...назови себя: ')
     print(f'Здравствуй, {char_name}! '
           'Сейчас твоя выносливость — 80, атака — 5 и защита — 10.')
     print('Ты можешь выбрать один из трёх путей силы:')
     print('Воитель, Маг, Лекарь')
-    char_class: str=choice_char_class()
+    char_class: str = choice_char_class()
     print(start_training(char_name, char_class))
 
 
@@ -161,10 +165,10 @@ if __name__ == '__main__':
     run_screensaver()
     print('Приветствую тебя, искатель приключений!')
     print('Прежде чем начать игру...')
-    char_name: str=input('...назови себя: ')
+    char_name: str = input('...назови себя: ')
     print(f'Здравствуй, {char_name}! '
           'Сейчас твоя выносливость — 80, атака — 5 и защита — 10.')
     print('Ты можешь выбрать один из трёх путей силы:')
     print('Воитель, Маг, Лекарь')
-    char_class: str=choice_char_class()
+    char_class: str = choice_char_class()
     print(start_training(char_name, char_class))
